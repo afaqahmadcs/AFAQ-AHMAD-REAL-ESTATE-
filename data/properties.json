@@ -1,0 +1,159 @@
+[
+  {
+    "id": 1,
+    "slug": "azure-villa-marbella",
+    "title": "Azure Villa Marbella",
+    "category": "villa",
+    "price": "$4,850,000",
+    "location": "Marbella, Spain",
+    "bedrooms": 6,
+    "bathrooms": 7,
+    "garage": 3,
+    "area": "8,200 sq ft",
+    "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
+    ],
+    "description": "An architectural masterpiece perched on the Mediterranean coast. This contemporary villa features floor-to-ceiling glass walls, an infinity pool overlooking the sea, and bespoke Italian marble throughout.",
+    "features": ["Infinity Pool", "Smart Home System", "Wine Cellar", "Private Beach Access", "Home Cinema", "Landscaped Gardens"]
+  },
+  {
+    "id": 2,
+    "slug": "skyline-penthouse-dubai",
+    "title": "Skyline Penthouse Dubai",
+    "category": "apartment",
+    "price": "$6,200,000",
+    "location": "Dubai Marina, UAE",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "garage": 2,
+    "area": "5,400 sq ft",
+    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80"
+    ],
+    "description": "A stunning duplex penthouse with panoramic views of the Dubai skyline and Arabian Gulf. Features a private rooftop terrace, chef's kitchen, and concierge services.",
+    "features": ["Rooftop Terrace", "Concierge Service", "Gym Access", "Panoramic Views", "Chef's Kitchen", "Valet Parking"]
+  },
+  {
+    "id": 3,
+    "slug": "grand-plaza-commercial",
+    "title": "Grand Plaza Commercial Tower",
+    "category": "commercial",
+    "price": "$12,500,000",
+    "location": "Manhattan, New York",
+    "bedrooms": 0,
+    "bathrooms": 8,
+    "garage": 10,
+    "area": "25,000 sq ft",
+    "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80"
+    ],
+    "description": "Premium commercial space in the heart of Manhattan's financial district. Class A office building with modern amenities, high-speed elevators, and 24/7 security.",
+    "features": ["Class A Building", "24/7 Security", "High-Speed Elevators", "Conference Facilities", "Rooftop Access", "EV Charging"]
+  },
+  {
+    "id": 4,
+    "slug": "serene-estate-bali",
+    "title": "Serene Estate Bali",
+    "category": "villa",
+    "price": "$2,900,000",
+    "location": "Ubud, Bali",
+    "bedrooms": 5,
+    "bathrooms": 6,
+    "garage": 2,
+    "area": "6,800 sq ft",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600573472591-ee6981f50809?w=1200&q=80"
+    ],
+    "description": "A tranquil tropical retreat nestled in the lush hills of Ubud. Traditional Balinese architecture meets modern luxury with open-air living spaces and a private spa.",
+    "features": ["Private Spa", "Tropical Gardens", "Open-Air Living", "Staff Quarters", "Rice Field Views", "Yoga Pavilion"]
+  },
+  {
+    "id": 5,
+    "slug": "metropolitan-loft-london",
+    "title": "Metropolitan Loft London",
+    "category": "apartment",
+    "price": "$3,750,000",
+    "location": "Shoreditch, London",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "garage": 1,
+    "area": "3,200 sq ft",
+    "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600566752355-35792bedfcd2?w=1200&q=80"
+    ],
+    "description": "A converted warehouse loft in the creative heart of Shoreditch. Exposed brick walls, steel beams, and double-height ceilings create an industrial-chic atmosphere.",
+    "features": ["Double-Height Ceilings", "Exposed Brick", "Roof Terrace", "Smart Lighting", "Underfloor Heating", "Art Gallery Space"]
+  },
+  {
+    "id": 6,
+    "slug": "highland-plot-scotland",
+    "title": "Highland Estate Plot",
+    "category": "plot",
+    "price": "$1,200,000",
+    "location": "Scottish Highlands, UK",
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "garage": 0,
+    "area": "12 acres",
+    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80"
+    ],
+    "description": "An exceptional 12-acre plot in the Scottish Highlands with planning permission for a luxury estate. Breathtaking mountain and loch views with complete privacy.",
+    "features": ["Planning Permission", "Mountain Views", "Loch Frontage", "Private Road", "Utilities Connected", "Wildlife Sanctuary"]
+  },
+  {
+    "id": 7,
+    "slug": "oceanfront-residence-malibu",
+    "title": "Oceanfront Residence Malibu",
+    "category": "villa",
+    "price": "$8,900,000",
+    "location": "Malibu, California",
+    "bedrooms": 5,
+    "bathrooms": 6,
+    "garage": 4,
+    "area": "7,500 sq ft",
+    "image": "https://images.unsplash.com/photo-1605276374101-debd2e774958?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1605276374101-debd2e774958?w=1200&q=80",
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=80"
+    ],
+    "description": "Direct oceanfront living on the prestigious Malibu coast. This modern residence features retractable glass walls, a beach-level deck, and sunset views from every room.",
+    "features": ["Direct Beach Access", "Retractable Glass Walls", "Sunset Views", "Outdoor Kitchen", "Fire Pit Lounge", "Guest House"]
+  },
+  {
+    "id": 8,
+    "slug": "executive-suite-singapore",
+    "title": "Executive Suite Singapore",
+    "category": "commercial",
+    "price": "$5,400,000",
+    "location": "Marina Bay, Singapore",
+    "bedrooms": 0,
+    "bathrooms": 4,
+    "garage": 5,
+    "area": "8,500 sq ft",
+    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80"
+    ],
+    "description": "Premium executive office suite in Marina Bay's most prestigious tower. Floor-to-ceiling windows with bay views, private boardroom, and dedicated reception area.",
+    "features": ["Bay Views", "Private Boardroom", "Reception Area", "High-Speed Internet", "Building Gym", "Helipad Access"]
+  }
+]

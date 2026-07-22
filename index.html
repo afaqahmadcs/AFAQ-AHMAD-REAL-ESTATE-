@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afaq Ahmad Real Estate | Luxury Properties & Investment Advisory</title>
+  <meta name="description" content="Afaq Ahmad Real Estate — Premium luxury property advisory. Residential, commercial, villas, apartments, and investment opportunities worldwide.">
+  <meta property="og:title" content="Afaq Ahmad Real Estate | Luxury Properties">
+  <meta property="og:description" content="Exceptional properties. Enduring value. Premium international real estate advisory.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components/loader.css">
+  <link rel="stylesheet" href="assets/css/components/header.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/components/hero.css">
+  <link rel="stylesheet" href="assets/css/components/cards.css">
+  <link rel="stylesheet" href="assets/css/components/forms.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/components/sections.css">
+  <link rel="stylesheet" href="assets/css/pages/home.css">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader" aria-hidden="true">
+    <div class="page-loader__logo">
+      Afaq Ahmad
+      <span>Real Estate</span>
+    </div>
+    <div class="page-loader__bar"><div class="page-loader__bar-fill"></div></div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-logo" aria-label="Afaq Ahmad Real Estate Home">
+        <span class="site-logo__name">Afaq Ahmad</span>
+        <span class="site-logo__tagline">Real Estate</span>
+      </a>
+      <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <ul class="site-nav__list">
+          <li><a href="index.html" class="site-nav__link active">Home</a></li>
+          <li><a href="about.html" class="site-nav__link">About</a></li>
+          <li><a href="services.html" class="site-nav__link">Services</a></li>
+          <li><a href="properties.html" class="site-nav__link">Properties</a></li>
+          <li><a href="team.html" class="site-nav__link">Team</a></li>
+          <li><a href="contact.html" class="site-nav__link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="header-actions__btn search-toggle" aria-label="Search properties"><i class="fas fa-search"></i></button>
+        <button class="header-actions__btn theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <a href="contact.html" class="header-actions__cta">Book Consultation</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html" class="mobile-nav__link">Home</a>
+    <a href="about.html" class="mobile-nav__link">About</a>
+    <a href="services.html" class="mobile-nav__link">Services</a>
+    <a href="properties.html" class="mobile-nav__link">Properties</a>
+    <a href="team.html" class="mobile-nav__link">Team</a>
+    <a href="pricing.html" class="mobile-nav__link">Pricing</a>
+    <a href="contact.html" class="mobile-nav__link">Contact</a>
+  </nav>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" role="dialog" aria-label="Search">
+    <button class="search-overlay__close" aria-label="Close search"><i class="fas fa-times"></i></button>
+    <div class="search-overlay__inner">
+      <input type="search" class="search-overlay__input" placeholder="Search properties, locations..." aria-label="Search">
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__shapes" aria-hidden="true">
+        <div class="hero__shape hero__shape--1"></div>
+        <div class="hero__shape hero__shape--2"></div>
+      </div>
+      <div class="hero__content">
+        <span class="hero__label" data-aos="fade-up">Premium Real Estate Advisory</span>
+        <h1 class="hero__title" data-aos="fade-up" data-aos-delay="100">Exceptional Properties.<br><em>Enduring Value.</em></h1>
+        <p class="hero__desc" data-aos="fade-up" data-aos-delay="200">We connect discerning clients with the world's most extraordinary properties — from Mediterranean villas to Manhattan penthouses.</p>
+        <div class="hero__actions" data-aos="fade-up" data-aos-delay="300">
+          <a href="properties.html" class="btn btn--primary">Explore Properties</a>
+          <a href="contact.html" class="btn btn--outline">Book Consultation</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <img class="hero__image" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1400&q=80" alt="Luxury modern villa with infinity pool at golden hour">
+        <div class="hero__image-overlay"></div>
+      </div>
+      <div class="hero__stats" data-aos="fade-up" data-aos-delay="500">
+        <div class="hero__stat">
+          <div class="hero__stat-number" data-count="250" data-suffix="+">0</div>
+          <div class="hero__stat-label">Properties Sold</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-number" data-count="15" data-suffix="+">0</div>
+          <div class="hero__stat-label">Years Experience</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-number" data-count="98" data-suffix="%">0</div>
+          <div class="hero__stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-text">Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="section" aria-labelledby="about-preview-title">
+      <div class="container">
+        <div class="featured-strip">
+          <div class="featured-strip__visual" data-aos="fade-right">
+            <div class="featured-strip__image-main reveal-image">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Luxury property interior with natural light" loading="lazy">
+            </div>
+            <div class="featured-strip__image-accent">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Modern architectural detail" loading="lazy">
+            </div>
+          </div>
+          <div data-aos="fade-left">
+            <span class="section-label">01 — About Us</span>
+            <h2 id="about-preview-title" class="section-title">A Legacy of Trust<br>in Luxury Real Estate</h2>
+            <div class="divider-gold"></div>
+            <p class="section-desc">Founded by Afaq Ahmad, our firm has built a reputation for discretion, expertise, and an unwavering commitment to client success across international markets.</p>
+            <div class="pull-quote">
+              <p>"Every property tells a story. Our role is to find the one that becomes yours."</p>
+              <cite>— Afaq Ahmad, Founder</cite>
+            </div>
+            <a href="about.html" class="btn btn--ghost" style="margin-top: 2rem;">Discover Our Story</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="section bg-warm" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="flex-between" style="margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;">
+          <div data-aos="fade-up">
+            <span class="section-label">02 — Portfolio</span>
+            <h2 id="featured-title" class="section-title">Featured Properties</h2>
+          </div>
+          <a href="properties.html" class="btn btn--ghost" data-aos="fade-up">View All Properties</a>
+        </div>
+        <div class="grid-3" data-properties-grid data-limit="3"></div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section" aria-labelledby="why-title">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 4rem;" data-aos="fade-up">
+          <span class="section-label">03 — Why Choose Us</span>
+          <h2 id="why-title" class="section-title">The Afaq Ahmad Difference</h2>
+          <div class="divider-gold divider-gold--center"></div>
+        </div>
+        <div class="why-grid">
+          <div class="why-item" data-aos="fade-up">
+            <div class="why-item__icon"><i class="fas fa-globe"></i></div>
+            <h3 class="why-item__title">Global Reach</h3>
+            <p class="why-item__desc">Exclusive access to premium properties across Europe, Middle East, Asia, and the Americas.</p>
+          </div>
+          <div class="why-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-item__icon"><i class="fas fa-handshake"></i></div>
+            <h3 class="why-item__title">Trusted Advisory</h3>
+            <p class="why-item__desc">Personalized consultation backed by 15+ years of market intelligence and negotiation expertise.</p>
+          </div>
+          <div class="why-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="why-item__icon"><i class="fas fa-shield-alt"></i></div>
+            <h3 class="why-item__title">Complete Discretion</h3>
+            <p class="why-item__desc">Confidential transactions handled with the utmost professionalism and privacy protection.</p>
+          </div>
+          <div class="why-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-item__icon"><i class="fas fa-chart-line"></i></div>
+            <h3 class="why-item__title">Investment Insight</h3>
+            <p class="why-item__desc">Data-driven portfolio strategies that maximize returns on luxury property investments.</p>
+          </div>
+          <div class="why-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="why-item__icon"><i class="fas fa-key"></i></div>
+            <h3 class="why-item__title">End-to-End Service</h3>
+            <p class="why-item__desc">From property search to management — a seamless experience at every stage of ownership.</p>
+          </div>
+          <div class="why-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="why-item__icon"><i class="fas fa-award"></i></div>
+            <h3 class="why-item__title">Award Winning</h3>
+            <p class="why-item__desc">Recognized internationally for excellence in luxury real estate advisory and client service.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Preview -->
+    <section class="section bg-warm" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 3rem;" data-aos="fade-up">
+          <span class="section-label">04 — Testimonials</span>
+          <h2 id="testimonials-title" class="section-title">What Our Clients Say</h2>
+        </div>
+        <div class="swiper testimonials-swiper" data-aos="fade-up">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <img class="testimonial-card__photo" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Client portrait" loading="lazy">
+                <div>
+                  <div class="testimonial-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                  <blockquote class="testimonial-card__quote">"Afaq Ahmad's team found us the perfect villa in Marbella. Their attention to detail and market knowledge exceeded every expectation."</blockquote>
+                  <div class="testimonial-card__author">James Richardson</div>
+                  <div class="testimonial-card__role">Villa Owner, Marbella</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <img class="testimonial-card__photo" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Client portrait" loading="lazy">
+                <div>
+                  <div class="testimonial-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                  <blockquote class="testimonial-card__quote">"The investment advisory service transformed our portfolio. Professional, transparent, and genuinely committed to our financial goals."</blockquote>
+                  <div class="testimonial-card__author">Sarah Al-Mansouri</div>
+                  <div class="testimonial-card__role">Property Investor, Dubai</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner" aria-labelledby="cta-title">
+      <div class="cta-banner__shapes" aria-hidden="true">
+        <div class="cta-banner__shape cta-banner__shape--1"></div>
+      </div>
+      <div class="container cta-banner__content" data-aos="fade-up">
+        <h2 id="cta-title" class="cta-banner__title">Ready to Find Your Extraordinary Property?</h2>
+        <p class="cta-banner__desc">Schedule a private consultation with our advisory team and discover opportunities tailored to your vision.</p>
+        <a href="contact.html" class="btn btn--gold">Book Your Consultation</a>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section" aria-labelledby="newsletter-title">
+      <div class="container" data-aos="fade-up">
+        <h2 id="newsletter-title" class="newsletter-section__title">Insights for Discerning Investors</h2>
+        <p class="newsletter-section__desc">Receive curated market intelligence and exclusive property previews.</p>
+        <form class="newsletter-inline" aria-label="Newsletter subscription">
+          <input type="email" placeholder="Your email address" required aria-label="Email address">
+          <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a href="index.html" class="site-logo">
+            <span class="site-logo__name">Afaq Ahmad</span>
+            <span class="site-logo__tagline">Real Estate</span>
+          </a>
+          <p class="site-footer__brand-desc">Premium international real estate advisory. Connecting discerning clients with exceptional properties since 2010.</p>
+        </div>
+        <div>
+          <h4 class="site-footer__heading">Quick Links</h4>
+          <ul class="site-footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="site-footer__heading">Services</h4>
+          <ul class="site-footer__links">
+            <li><a href="services.html">Buying</a></li>
+            <li><a href="services.html">Selling</a></li>
+            <li><a href="services.html">Renting</a></li>
+            <li><a href="services.html">Investment</a></li>
+            <li><a href="services.html">Management</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="site-footer__heading">Contact</h4>
+          <div class="site-footer__contact-item"><i class="fas fa-phone"></i><span>+1 (555) 123-4567</span></div>
+          <div class="site-footer__contact-item"><i class="fas fa-envelope"></i><span>info@afaqahmad.com</span></div>
+          <div class="site-footer__contact-item"><i class="fas fa-map-marker-alt"></i><span>123 Luxury Avenue, Suite 500<br>New York, NY 10001</span></div>
+          <form class="site-footer__newsletter" aria-label="Footer newsletter">
+            <input type="email" placeholder="Email" required aria-label="Email">
+            <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">&copy; 2026 Afaq Ahmad Real Estate. All rights reserved.</p>
+        <div class="site-footer__social">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/15551234567" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    new Swiper('.testimonials-swiper', {
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      autoplay: { delay: 6000, disableOnInteraction: false },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      loop: true
+    });
+  </script>
+</body>
+</html>

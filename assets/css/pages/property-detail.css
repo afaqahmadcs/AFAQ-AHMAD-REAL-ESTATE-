@@ -1,0 +1,210 @@
+/* =============================================
+   Property Detail Page
+   ============================================= */
+
+.property-detail__gallery {
+  position: relative;
+  height: 70vh;
+  min-height: 450px;
+  overflow: hidden;
+}
+
+.property-detail__gallery .swiper-slide img {
+  width: 100%;
+  height: 70vh;
+  min-height: 450px;
+  object-fit: cover;
+}
+
+.property-detail__layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-xl);
+  margin-top: calc(-4rem);
+  position: relative;
+  z-index: 2;
+}
+
+.property-detail__main {
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+.property-detail__sidebar {
+  position: sticky;
+  top: calc(var(--header-height) + 2rem);
+  align-self: start;
+}
+
+.property-detail__info-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--border-color);
+}
+
+.property-detail__price {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.property-detail__location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.property-detail__location i {
+  color: var(--accent);
+}
+
+.property-detail__specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.property-detail__spec {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.property-detail__spec-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-size: 0.875rem;
+}
+
+.property-detail__spec-label {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.property-detail__spec-value {
+  font-weight: 600;
+  font-size: var(--text-base);
+}
+
+.property-detail__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.property-detail__actions .btn {
+  width: 100%;
+}
+
+.property-detail__description {
+  margin-top: var(--space-xl);
+}
+
+.property-detail__description h3 {
+  margin-bottom: var(--space-md);
+}
+
+.property-detail__description p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.property-detail__features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: var(--space-md);
+}
+
+.property-detail__feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-sm);
+}
+
+.property-detail__feature i {
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+/* 404 Page */
+.error-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-xl);
+  background: var(--bg-secondary);
+}
+
+.error-page__code {
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 15vw, 12rem);
+  color: var(--color-navy);
+  line-height: 1;
+  opacity: 0.15;
+  margin-bottom: -2rem;
+}
+
+[data-theme="dark"] .error-page__code {
+  color: var(--color-gold);
+  opacity: 0.2;
+}
+
+.error-page__title {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-sm);
+}
+
+.error-page__desc {
+  max-width: 420px;
+  margin-inline: auto;
+  margin-bottom: var(--space-lg);
+}
+
+.error-page__illustration {
+  width: 200px;
+  height: 200px;
+  margin-inline: auto;
+  margin-bottom: var(--space-lg);
+  opacity: 0.6;
+}
+
+@media (max-width: 1024px) {
+  .property-detail__layout {
+    grid-template-columns: 1fr;
+    margin-top: var(--space-lg);
+  }
+
+  .property-detail__sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .property-detail__specs,
+  .property-detail__features {
+    grid-template-columns: 1fr;
+  }
+}

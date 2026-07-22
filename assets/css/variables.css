@@ -1,0 +1,89 @@
+/* =============================================
+   Afaq Ahmad Real Estate — Design Tokens
+   ============================================= */
+
+:root {
+  /* Brand Colors */
+  --color-navy: #0B1F3A;
+  --color-navy-deep: #061428;
+  --color-navy-light: #142D4F;
+  --color-white-warm: #F8F6F2;
+  --color-white-pure: #FFFFFF;
+  --color-gold: #C9A962;
+  --color-gold-muted: #B8954F;
+  --color-gold-light: rgba(201, 169, 98, 0.15);
+  --color-gray-soft: #E8E6E2;
+  --color-gray-mid: #9A9590;
+  --color-charcoal: #2A2A2A;
+  --color-matte-black: #0E0E0E;
+  --color-surface-dark: #161616;
+  --color-surface-dark-2: #1E1E1E;
+
+  /* Semantic */
+  --bg-primary: var(--color-white-pure);
+  --bg-secondary: var(--color-white-warm);
+  --bg-dark: var(--color-matte-black);
+  --text-primary: var(--color-charcoal);
+  --text-muted: var(--color-gray-mid);
+  --text-inverse: var(--color-white-warm);
+  --accent: var(--color-gold);
+  --border-color: var(--color-gray-soft);
+
+  /* Header */
+  --header-height: 80px;
+  --header-bg: rgba(11, 31, 58, 0.65);
+  --header-bg-scrolled: rgba(11, 31, 58, 0.92);
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  --font-label: 'DM Sans', system-ui, sans-serif;
+
+  --text-xs: clamp(0.6875rem, 0.65rem + 0.15vw, 0.75rem);
+  --text-sm: clamp(0.8125rem, 0.78rem + 0.15vw, 0.875rem);
+  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
+  --text-lg: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  --text-3xl: clamp(2rem, 1.5rem + 1.5vw, 3rem);
+  --text-4xl: clamp(2.5rem, 2rem + 2vw, 4rem);
+  --text-hero: clamp(2.75rem, 2rem + 4vw, 5.5rem);
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+  --section-padding: clamp(4rem, 6vw, 8rem);
+  --container-max: 1320px;
+  --container-narrow: 900px;
+
+  /* Effects */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-soft: 0 4px 24px rgba(11, 31, 58, 0.08);
+  --shadow-medium: 0 8px 40px rgba(11, 31, 58, 0.12);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.15);
+  --blur-glass: blur(16px);
+  --transition-fast: 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-base: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-slow: 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --bg-primary: var(--color-matte-black);
+  --bg-secondary: var(--color-surface-dark);
+  --text-primary: var(--color-white-warm);
+  --text-muted: #8A8580;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --header-bg: rgba(14, 14, 14, 0.75);
+  --header-bg-scrolled: rgba(14, 14, 14, 0.95);
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
