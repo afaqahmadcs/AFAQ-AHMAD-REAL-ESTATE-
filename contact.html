@@ -104,54 +104,35 @@
               Please provide brief details on your jurisdiction, asset interest, and preferred consultation mode (in-person or encrypted video).
             </p>
 
-            <form class="contact-form" aria-label="Private Consultation Booking Form" novalidate>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="first-name">First Name *</label>
-                  <input type="text" id="first-name" name="firstName" required autocomplete="given-name" placeholder="e.g. Alexander">
-                </div>
-                <div class="form-group">
-                  <label for="last-name">Last Name *</label>
-                  <input type="text" id="last-name" name="lastName" required autocomplete="family-name" placeholder="e.g. Vance">
-                </div>
+            <form class="contact-form" aria-label="Contact and Inquiry Form" novalidate>
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required autocomplete="name" placeholder="e.g. Alexander Vance">
               </div>
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="email">Corporate / Private Email *</label>
-                  <input type="email" id="email" name="email" required autocomplete="email" placeholder="e.g. a.vance@capital.com">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required autocomplete="email" placeholder="e.g. alexander@vance.com">
                 </div>
                 <div class="form-group">
-                  <label for="phone">Phone / WhatsApp Number</label>
-                  <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. +92 318 9798577">
+                  <label for="phone">Phone *</label>
+                  <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="e.g. +92 318 9798577">
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="service">Service Mandate *</label>
-                <select id="service" name="service" required>
-                  <option value="">Select advisory area...</option>
-                  <option value="buying">Prime Acquisition (Villas &amp; Penthouses)</option>
-                  <option value="selling">Discreet Asset Disposition (Off-Market)</option>
-                  <option value="investment">Portfolio Advisory &amp; Yield Structuring</option>
-                  <option value="commercial">Commercial Flagship Asset Acquisition</option>
-                  <option value="management">Turnkey Estate &amp; Asset Management</option>
-                  <option value="consultation">Private Retainer / General Advisory</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="message">Acquisition Parameters or Inquiry *</label>
-                <textarea id="message" name="message" rows="4" required placeholder="Please outline target jurisdictions, budget allocation, or specific property references..."></textarea>
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Please write your inquiry, property requirements, or consultation request..."></textarea>
               </div>
 
               <button type="submit" class="btn btn--gold" style="width:100%; padding:1rem 2rem; font-weight:600;">
-                <i class="fas fa-lock" style="font-size:0.875rem; margin-right:0.5rem;"></i> Request Confidential Consultation
+                <i class="fas fa-paper-plane" style="font-size:0.875rem; margin-right:0.5rem;"></i> Send Message
               </button>
 
               <div style="font-size:var(--text-xs); color:var(--text-muted); text-align:center; margin-top:0.75rem;">
                 <i class="fas fa-shield-alt" style="color:var(--accent); margin-right:0.35rem;"></i>
-                Protected under strict Non-Disclosure Agreement (NDA) protocol.
+                Protected under strict privacy and discretion standards.
               </div>
             </form>
           </div>
@@ -264,22 +245,17 @@
             <li><a href="team.html">Our Leadership</a></li>
             <li><a href="testimonials.html">Client Testimonials</a></li>
             <li><a href="faq.html">Frequently Asked Questions</a></li>
-            <li><a href="contact.html">Private Office Locations</a></li>
+            <li><a href="contact.html">Contact & Consultation</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="site-footer__heading">Private Intelligence</h4>
-          <p style="color:var(--text-secondary); font-size:var(--text-sm); margin-bottom:1rem; line-height:1.6;">Receive exclusive off-market listings and confidential quarterly market intelligence reports.</p>
-          <form class="newsletter-form" aria-label="Newsletter subscription">
-            <div style="display:flex; gap:0.5rem;">
-              <input type="email" placeholder="Your corporate email..." required style="background:var(--bg-card); border:1px solid var(--border-color); color:var(--text-primary); padding:0.75rem 1rem; border-radius:var(--radius-sm); font-size:var(--text-sm); width:100%;">
-              <button type="submit" class="btn btn--gold" style="padding:0.75rem 1.25rem;"><i class="fas fa-arrow-right"></i></button>
-            </div>
-          </form>
-          <div style="margin-top:1.25rem; font-size:var(--text-xs); color:var(--text-muted); display:flex; flex-direction:column; gap:0.5rem;">
-            <div><a href="tel:+923189798577" style="color:inherit;"><i class="fas fa-phone" style="color:var(--accent); margin-right:0.5rem;"></i> +92 318 9798577</a></div>
-            <div><a href="mailto:afaqahmad.contact@gmail.com" style="color:inherit;"><i class="fas fa-envelope" style="color:var(--accent); margin-right:0.5rem;"></i> afaqahmad.contact@gmail.com</a></div>
-            <div><a href="https://www.linkedin.com/in/afaqahmadcs" target="_blank" rel="noopener noreferrer" style="color:inherit;"><i class="fab fa-linkedin" style="color:var(--accent); margin-right:0.5rem;"></i> linkedin.com/in/afaqahmadcs</a></div>
+          <h4 class="site-footer__heading">Get in Touch</h4>
+          <p style="color:var(--text-secondary); font-size:var(--text-sm); margin-bottom:1rem; line-height:1.6;">Direct consultation and advisory inquiries available globally.</p>
+          <div style="font-size:var(--text-sm); color:var(--text-muted); display:flex; flex-direction:column; gap:0.6rem;">
+            <div><i class="fas fa-phone" style="color:var(--accent); margin-right:0.5rem;"></i> <a href="tel:+923189798577" style="color:inherit;">+92 318 9798577</a></div>
+            <div><i class="fab fa-whatsapp" style="color:var(--accent); margin-right:0.5rem;"></i> <a href="https://wa.me/923189798577" target="_blank" rel="noopener noreferrer" style="color:inherit;">WhatsApp Direct</a></div>
+            <div><i class="fas fa-envelope" style="color:var(--accent); margin-right:0.5rem;"></i> <a href="mailto:afaqahmad.contact@gmail.com" style="color:inherit; word-break:break-all;">afaqahmad.contact@gmail.com</a></div>
+            <div><i class="fab fa-linkedin-in" style="color:var(--accent); margin-right:0.5rem;"></i> <a href="https://www.linkedin.com/in/afaqahmadcs" target="_blank" rel="noopener noreferrer" style="color:inherit;">afaqahmadcs</a></div>
           </div>
         </div>
       </div>

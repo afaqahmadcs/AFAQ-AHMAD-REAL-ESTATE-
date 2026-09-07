@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsletterForms();
   initAOS();
   initImageFallback();
+  initMobileContactBar();
 
   // Page-specific modules
   initPropertiesModule();
@@ -499,60 +500,114 @@ function initContactForm() {
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
+  const nameInput = form.querySelector('[name="name"]') || form.querySelector('[name="firstName"]');
+  const emailInput = form.querySelector('[name="email"]');
+  const phoneInput = form.querySelector('[name="phone"]');
+  const messageInput = form.querySelector('[name="message"]');
+  const submitBtn = form.querySelector('[type="submit"]');
+
+  // Input listeners to clear errors on user typing
+  [nameInput, emailInput, phoneInput, messageInput].filter(Boolean).forEach(input => {
+    input.addEventListener('input', () => {
+      input.style.borderBottomColor = '';
+      input.removeAttribute('aria-invalid');
+      const errEl = input.parentNode.querySelector('.field-error');
+      if (errEl) errEl.remove();
+    });
+  });
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     let hasError = false;
-    const firstName = form.querySelector('[name="firstName"]');
-    const lastName = form.querySelector('[name="lastName"]');
-    const email = form.querySelector('[name="email"]');
-    const service = form.querySelector('[name="service"]');
-    const message = form.querySelector('[name="message"]');
-    const submitBtn = form.querySelector('[type="submit"]');
 
-    // Simple robust validation
     const validateField = (field, condition, errorMsg) => {
+      if (!field) return;
       let errEl = field.parentNode.querySelector('.field-error');
       if (!condition) {
         hasError = true;
         field.style.borderBottomColor = '#E74C3C';
+        field.setAttribute('aria-invalid', 'true');
         if (!errEl) {
           errEl = document.createElement('span');
           errEl.className = 'field-error';
-          errEl.style.cssText = 'color:#E74C3C; font-size:0.75rem; display:block; margin-top:0.25rem;';
+          errEl.style.cssText = 'color:#E74C3C; font-size:0.75rem; display:block; margin-top:0.35rem;';
           field.parentNode.appendChild(errEl);
         }
         errEl.textContent = errorMsg;
       } else {
         field.style.borderBottomColor = '';
+        field.removeAttribute('aria-invalid');
         if (errEl) errEl.remove();
       }
     };
 
-    if (firstName) validateField(firstName, firstName.value.trim().length >= 2, 'Please enter your first name.');
-    if (lastName) validateField(lastName, lastName.value.trim().length >= 2, 'Please enter your last name.');
-    if (email) {
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      validateField(email, emailPattern.test(email.value.trim()), 'Please enter a valid email address.');
+    if (nameInput) {
+      validateField(nameInput, nameInput.value.trim().length >= 2, 'Please enter your name (at least 2 characters).');
     }
-    if (service) validateField(service, service.value !== '', 'Please select a service interest.');
-    if (message) validateField(message, message.value.trim().length >= 10, 'Please enter a message (at least 10 characters).');
+    if (emailInput) {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      validateField(emailInput, emailPattern.test(emailInput.value.trim()), 'Please enter a valid email address.');
+    }
+    if (phoneInput) {
+      validateField(phoneInput, phoneInput.value.trim().replace(/\D/g, '').length >= 7, 'Please enter a valid phone number (at least 7 digits).');
+    }
+    if (messageInput) {
+      validateField(messageInput, messageInput.value.trim().length >= 10, 'Please enter your message (at least 10 characters).');
+    }
 
     if (hasError) return;
 
     // Loading State
     const originalText = submitBtn.innerHTML;
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Processing Request...';
+    submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Sending message...';
 
     setTimeout(() => {
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalText;
-      form.reset();
+      const clientName = nameInput ? nameInput.value.trim() : 'Valued Client';
 
-      // Show confirmation modal
-      showConsultationConfirmation(firstName ? firstName.value : 'Discerning Client');
-    }, 1200);
+      // Clean inline success state
+      const formWrap = form.closest('.contact-form-wrap');
+      if (formWrap) {
+        const originalFormHtml = form.outerHTML;
+        formWrap.innerHTML = `
+          <div class="contact-success-state" style="text-align:center; padding:3rem 1.5rem; background:var(--bg-card); border-radius:var(--radius-md); border:1px solid rgba(201, 169, 98, 0.4); animation: fadeIn 0.4s ease forwards;">
+            <div style="width:68px; height:68px; border-radius:50%; background:rgba(201, 169, 98, 0.15); color:var(--color-gold); display:flex; align-items:center; justify-content:center; font-size:1.75rem; margin:0 auto 1.5rem; border:1px solid rgba(201, 169, 98, 0.3);">
+              <i class="fas fa-check"></i>
+            </div>
+            <h3 style="font-family:var(--font-serif); font-size:var(--text-2xl); color:var(--text-primary); margin-bottom:0.75rem;">Message Received</h3>
+            <p style="color:var(--text-secondary); font-size:var(--text-sm); line-height:1.7; max-width:460px; margin:0 auto 1.75rem;">
+              Thank you, <strong style="color:var(--text-primary);">${escapeHtml(clientName)}</strong>. Your message has been sent successfully. Afaq Ahmad will review your inquiry and respond directly.
+            </p>
+            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+              <a href="https://wa.me/923189798577" target="_blank" rel="noopener noreferrer" class="btn btn--gold" style="font-size:var(--text-xs); padding:0.7rem 1.4rem;">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+              </a>
+              <button type="button" class="btn btn--ghost contact-reset-btn" style="font-size:var(--text-xs); padding:0.7rem 1.4rem; border:1px solid var(--border-color);">
+                Send Another Message
+              </button>
+            </div>
+          </div>
+        `;
+
+        formWrap.querySelector('.contact-reset-btn').addEventListener('click', () => {
+          formWrap.innerHTML = `
+            <span class="section-label">Confidential Transmission</span>
+            <h2 class="section-title" style="font-size:var(--text-2xl); margin-bottom:1.5rem;">Get in Touch</h2>
+            <p style="color:var(--text-secondary); font-size:var(--text-sm); margin-bottom:2rem; line-height:1.6;">
+              Please provide your details below and Afaq Ahmad will respond directly.
+            </p>
+            ${originalFormHtml}
+          `;
+          initContactForm();
+        });
+      } else {
+        form.reset();
+        showConsultationConfirmation(clientName);
+      }
+    }, 900);
   });
 }
 
@@ -581,6 +636,27 @@ function showConsultationConfirmation(name) {
   }
 
   modal.classList.add('active');
+}
+
+/* ==========================================================================
+   14. Mobile Fixed Bottom Contact Bar (WhatsApp | Call)
+   ========================================================================== */
+function initMobileContactBar() {
+  if (document.querySelector('.mobile-contact-bar')) return;
+
+  const bar = document.createElement('div');
+  bar.className = 'mobile-contact-bar';
+  bar.setAttribute('role', 'navigation');
+  bar.setAttribute('aria-label', 'Mobile Quick Contact');
+  bar.innerHTML = `
+    <a href="https://wa.me/923189798577" class="mobile-contact-bar__btn mobile-contact-bar__btn--whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+    </a>
+    <a href="tel:+923189798577" class="mobile-contact-bar__btn mobile-contact-bar__btn--call" aria-label="Call Afaq Ahmad">
+      <i class="fas fa-phone-alt"></i> <span>Call</span>
+    </a>
+  `;
+  document.body.appendChild(bar);
 }
 
 /* ==========================================================================

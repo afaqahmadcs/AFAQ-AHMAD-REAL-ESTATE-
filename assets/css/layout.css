@@ -423,3 +423,85 @@
   }
 }
 
+/* =============================================
+   Mobile Fixed Bottom Contact Bar (<= 768px)
+   ============================================= */
+.mobile-contact-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-contact-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 990;
+    background: rgba(14, 14, 14, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(201, 169, 98, 0.28);
+    padding: 0.6rem 1rem;
+    padding-bottom: calc(0.6rem + env(safe-area-inset-bottom, 0px));
+    gap: 0.75rem;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+  }
+
+  .mobile-contact-bar__btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.65rem 1rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+
+  .mobile-contact-bar__btn--whatsapp {
+    background: rgba(37, 211, 102, 0.12);
+    color: #25D366;
+    border: 1px solid rgba(37, 211, 102, 0.35);
+  }
+
+  .mobile-contact-bar__btn--whatsapp:active {
+    background: #25D366;
+    color: #0E0E0E;
+  }
+
+  .mobile-contact-bar__btn--call {
+    background: rgba(201, 169, 98, 0.14);
+    color: var(--color-gold);
+    border: 1px solid rgba(201, 169, 98, 0.4);
+  }
+
+  .mobile-contact-bar__btn--call:active {
+    background: var(--color-gold);
+    color: var(--color-navy-deep);
+  }
+
+  /* Ensure page content never gets covered by the mobile bottom bar */
+  body {
+    padding-bottom: calc(65px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Reposition back-to-top button so it floats smoothly above the mobile bar */
+  .back-to-top {
+    bottom: calc(74px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  /* On mobile screens, hide the redundant single WhatsApp float icon */
+  .whatsapp-float {
+    display: none !important;
+  }
+}
+
