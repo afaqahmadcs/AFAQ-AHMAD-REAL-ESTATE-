@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>(function(){const t=localStorage.getItem('aa_theme')||'dark';if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Afaq Ahmad Real Estate | Luxury Properties & Investment Advisory</title>
   <meta name="description" content="Afaq Ahmad Real Estate — Premium luxury property advisory. Residential, commercial, villas, apartments, and investment opportunities worldwide.">
@@ -58,12 +59,15 @@
           <li><a href="services.html" class="site-nav__link">Services</a></li>
           <li><a href="properties.html" class="site-nav__link">Properties</a></li>
           <li><a href="team.html" class="site-nav__link">Team</a></li>
+          <li><a href="pricing.html" class="site-nav__link">Pricing</a></li>
+          <li><a href="testimonials.html" class="site-nav__link">Testimonials</a></li>
+          <li><a href="faq.html" class="site-nav__link">FAQ</a></li>
           <li><a href="contact.html" class="site-nav__link">Contact</a></li>
         </ul>
       </nav>
       <div class="header-actions">
         <button class="header-actions__btn search-toggle" aria-label="Search properties"><i class="fas fa-search"></i></button>
-        <button class="header-actions__btn theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <button class="header-actions__btn theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-sun"></i></button>
         <a href="contact.html" class="header-actions__cta">Book Consultation</a>
         <button class="hamburger" aria-label="Open menu" aria-expanded="false">
           <span class="hamburger__line"></span>
@@ -76,20 +80,24 @@
 
   <!-- Mobile Nav -->
   <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
-    <a href="index.html" class="mobile-nav__link">Home</a>
+    <a href="index.html" class="mobile-nav__link active">Home</a>
     <a href="about.html" class="mobile-nav__link">About</a>
     <a href="services.html" class="mobile-nav__link">Services</a>
     <a href="properties.html" class="mobile-nav__link">Properties</a>
     <a href="team.html" class="mobile-nav__link">Team</a>
     <a href="pricing.html" class="mobile-nav__link">Pricing</a>
+    <a href="testimonials.html" class="mobile-nav__link">Testimonials</a>
+    <a href="faq.html" class="mobile-nav__link">FAQ</a>
     <a href="contact.html" class="mobile-nav__link">Contact</a>
+    <a href="contact.html" class="mobile-nav__cta">Book Consultation</a>
   </nav>
 
   <!-- Search Overlay -->
-  <div class="search-overlay" role="dialog" aria-label="Search">
+  <div class="search-overlay" role="dialog" aria-label="Search properties">
     <button class="search-overlay__close" aria-label="Close search"><i class="fas fa-times"></i></button>
     <div class="search-overlay__inner">
-      <input type="search" class="search-overlay__input" placeholder="Search properties, locations..." aria-label="Search">
+      <input type="search" class="search-overlay__input" placeholder="Search properties, locations, types..." aria-label="Search">
+      <div class="search-results" aria-live="polite"></div>
     </div>
   </div>
 
@@ -105,27 +113,30 @@
         <h1 class="hero__title" data-aos="fade-up" data-aos-delay="100">Exceptional Properties.<br><em>Enduring Value.</em></h1>
         <p class="hero__desc" data-aos="fade-up" data-aos-delay="200">We connect discerning clients with the world's most extraordinary properties — from Mediterranean villas to Manhattan penthouses.</p>
         <div class="hero__actions" data-aos="fade-up" data-aos-delay="300">
-          <a href="properties.html" class="btn btn--primary">Explore Properties</a>
+          <a href="properties.html" class="btn btn--gold">Explore Properties</a>
           <a href="contact.html" class="btn btn--outline">Book Consultation</a>
+        </div>
+        <div class="hero__stats" data-aos="fade-up" data-aos-delay="400">
+          <div class="hero__stat">
+            <div class="hero__stat-number" data-count="250" data-suffix="+">0</div>
+            <div class="hero__stat-label">Properties Sold</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-number" data-count="15" data-suffix="+">0</div>
+            <div class="hero__stat-label">Years Experience</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-number" data-count="98" data-suffix="%">0</div>
+            <div class="hero__stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+        <div class="hero__showcase-badge" data-aos="fade-up" data-aos-delay="500">
+          <i class="fas fa-shield-alt" style="color:var(--accent);"></i> Curated Portfolio Showcase • Demo Data
         </div>
       </div>
       <div class="hero__visual">
         <img class="hero__image" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1400&q=80" alt="Luxury modern villa with infinity pool at golden hour">
         <div class="hero__image-overlay"></div>
-      </div>
-      <div class="hero__stats" data-aos="fade-up" data-aos-delay="500">
-        <div class="hero__stat">
-          <div class="hero__stat-number" data-count="250" data-suffix="+">0</div>
-          <div class="hero__stat-label">Properties Sold</div>
-        </div>
-        <div class="hero__stat">
-          <div class="hero__stat-number" data-count="15" data-suffix="+">0</div>
-          <div class="hero__stat-label">Years Experience</div>
-        </div>
-        <div class="hero__stat">
-          <div class="hero__stat-number" data-count="98" data-suffix="%">0</div>
-          <div class="hero__stat-label">Client Satisfaction</div>
-        </div>
       </div>
       <div class="hero__scroll" aria-hidden="true">
         <span class="hero__scroll-text">Scroll</span>
@@ -297,6 +308,7 @@
             <li><a href="properties.html">Properties</a></li>
             <li><a href="team.html">Our Team</a></li>
             <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="faq.html">FAQ</a></li>
           </ul>
         </div>

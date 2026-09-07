@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ | Afaq Ahmad Real Estate</title>
-  <meta name="description" content="Frequently asked questions about luxury property buying, selling, investment, and advisory services.">
-  <meta property="og:title" content="FAQ | Afaq Ahmad Real Estate">
+  <title>Frequently Asked Questions | Afaq Ahmad Real Estate</title>
+  <meta name="description" content="Answers to common questions regarding luxury property acquisitions, off-market deal access, advisory retainers, and asset management.">
+  <meta property="og:title" content="Frequently Asked Questions | Afaq Ahmad Real Estate">
+  <meta property="og:description" content="Everything you need to know about partnering with Afaq Ahmad Real Estate advisory.">
+  <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <script>
+    (function(){
+      const t = localStorage.getItem('aa_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -21,75 +29,273 @@
   <link rel="stylesheet" href="assets/css/components/footer.css">
   <link rel="stylesheet" href="assets/css/components/hero.css">
   <link rel="stylesheet" href="assets/css/components/forms.css">
+  <link rel="stylesheet" href="assets/css/components/sections.css">
   <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
   <div class="page-loader" aria-hidden="true"><div class="page-loader__logo">Afaq Ahmad<span>Real Estate</span></div><div class="page-loader__bar"><div class="page-loader__bar-fill"></div></div></div>
   <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
+
   <header class="site-header scrolled" role="banner">
     <div class="site-header__inner">
       <a href="index.html" class="site-logo"><span class="site-logo__name">Afaq Ahmad</span><span class="site-logo__tagline">Real Estate</span></a>
-      <nav class="site-nav"><ul class="site-nav__list">
-        <li><a href="index.html" class="site-nav__link">Home</a></li>
-        <li><a href="about.html" class="site-nav__link">About</a></li>
-        <li><a href="properties.html" class="site-nav__link">Properties</a></li>
-        <li><a href="contact.html" class="site-nav__link">Contact</a></li>
-      </ul></nav>
+      <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <ul class="site-nav__list">
+          <li><a href="index.html" class="site-nav__link">Home</a></li>
+          <li><a href="about.html" class="site-nav__link">About</a></li>
+          <li><a href="services.html" class="site-nav__link">Services</a></li>
+          <li><a href="properties.html" class="site-nav__link">Properties</a></li>
+          <li><a href="team.html" class="site-nav__link">Team</a></li>
+          <li><a href="pricing.html" class="site-nav__link">Pricing</a></li>
+          <li><a href="testimonials.html" class="site-nav__link">Testimonials</a></li>
+          <li><a href="faq.html" class="site-nav__link active">FAQ</a></li>
+          <li><a href="contact.html" class="site-nav__link">Contact</a></li>
+        </ul>
+      </nav>
       <div class="header-actions">
+        <button class="header-actions__btn search-toggle" aria-label="Search"><i class="fas fa-search"></i></button>
         <button class="header-actions__btn theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
         <a href="contact.html" class="header-actions__cta">Book Consultation</a>
         <button class="hamburger" aria-label="Open menu"><span class="hamburger__line"></span><span class="hamburger__line"></span><span class="hamburger__line"></span></button>
       </div>
     </div>
   </header>
-  <nav class="mobile-nav"><a href="index.html" class="mobile-nav__link">Home</a><a href="contact.html" class="mobile-nav__link">Contact</a></nav>
+
+  <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html" class="mobile-nav__link">Home</a>
+    <a href="about.html" class="mobile-nav__link">About</a>
+    <a href="services.html" class="mobile-nav__link">Services</a>
+    <a href="properties.html" class="mobile-nav__link">Properties</a>
+    <a href="team.html" class="mobile-nav__link">Team</a>
+    <a href="pricing.html" class="mobile-nav__link">Pricing</a>
+    <a href="testimonials.html" class="mobile-nav__link">Testimonials</a>
+    <a href="faq.html" class="mobile-nav__link active">FAQ</a>
+    <a href="contact.html" class="mobile-nav__link">Contact</a>
+  </nav>
+
+  <!-- Live Search Overlay -->
+  <div class="search-overlay" role="dialog" aria-label="Search">
+    <button class="search-overlay__close" aria-label="Close search"><i class="fas fa-times"></i></button>
+    <div class="search-overlay__inner">
+      <input type="search" class="search-overlay__input" placeholder="Search properties by title, city, or type..." aria-label="Search">
+      <div class="search-results" style="display:none;"></div>
+    </div>
+  </div>
 
   <main>
     <section class="page-hero">
       <div class="container page-hero__content">
-        <nav class="page-hero__breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>FAQ</span></nav>
+        <nav class="page-hero__breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>FAQ</span></nav>
         <h1 class="page-hero__title" data-aos="fade-up">Frequently Asked Questions</h1>
+        <p style="color:var(--text-secondary); max-width:620px; margin-top:1rem; font-size:var(--text-lg); line-height:1.6;" data-aos="fade-up" data-aos-delay="100">
+          Clarity and transparency across our acquisition protocols, investment advisory structures, and client confidentiality standards.
+        </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="faq-list" data-aos="fade-up">
-          <div class="faq-item">
-            <button class="faq-item__question">How do I schedule a property consultation?<span class="faq-item__icon"><i class="fas fa-plus"></i></span></button>
-            <div class="faq-item__answer"><p>You can schedule a consultation through our contact page, by calling our office directly, or via WhatsApp. We offer both in-person and virtual consultations to accommodate your preferences.</p></div>
+        <!-- Filter Tabs -->
+        <div class="faq-tabs" data-aos="fade-up">
+          <button class="faq-tab active" data-faq-filter="all">All Topics</button>
+          <button class="faq-tab" data-faq-filter="acquisitions">Acquisitions & Sales</button>
+          <button class="faq-tab" data-faq-filter="investment">Investment Advisory</button>
+          <button class="faq-tab" data-faq-filter="management">Asset Management</button>
+          <button class="faq-tab" data-faq-filter="legal">Legal & Discretion</button>
+        </div>
+
+        <!-- Accordion List -->
+        <div class="faq-list" data-aos="fade-up" data-aos-delay="100">
+          <!-- 1 -->
+          <div class="faq-item" data-category="acquisitions">
+            <button class="faq-item__question">
+              How do I schedule a confidential property consultation?
+              <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>You can schedule an exploratory session directly through our contact portal, phone our New York or London desks, or message our private client team via encrypted WhatsApp. Consultations can be conducted in person at our offices or via private secure video conference.</p>
+            </div>
           </div>
-          <div class="faq-item">
-            <button class="faq-item__question">What markets do you operate in?<span class="faq-item__icon"><i class="fas fa-plus"></i></span></button>
-            <div class="faq-item__answer"><p>We operate across 12 international markets including the United States, United Kingdom, UAE, Spain, France, Singapore, and more. Our global network provides access to exclusive off-market properties worldwide.</p></div>
+
+          <!-- 2 -->
+          <div class="faq-item" data-category="acquisitions">
+            <button class="faq-item__question">
+              What international markets and jurisdictions do you operate in?
+              <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>We maintain active advisory networks across 12 prime global hubs: New York, Miami, London, Paris, Monaco, Marbella, Dubai, Riyadh, Zurich, Singapore, Tokyo, and Sydney. Our relationships with sovereign desks and local notary registries grant cross-border legal capability.</p>
+            </div>
           </div>
-          <div class="faq-item">
-            <button class="faq-item__question">Do you handle commercial properties as well?<span class="faq-item__icon"><i class="fas fa-plus"></i></span></button>
-            <div class="faq-item__answer"><p>Yes, our commercial division specializes in Class A office buildings, retail spaces, and mixed-use developments. We provide full advisory from acquisition through asset management.</p></div>
+
+          <!-- 3 -->
+          <div class="faq-item" data-category="acquisitions">
+            <button class="faq-item__question">
+              How does Afaq Ahmad access off-market and unlisted trophy assets?
+              <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Over 40% of our completed transactions take place off-market. Through over 15 years of cultivating direct relationships with family offices, estate trustees, aristocratic landholders, and sovereign wealth representatives, we obtain first-look access to assets before public syndication.</p>
+            </div>
           </div>
-          <div class="faq-item">
-            <button class="faq-item__question">What is your fee structure?<span class="faq-item__icon"><i class="fas fa-plus"></i></span></button>
-            <div class="faq-item__answer"><p>Our fees vary by service type. Transaction-based services typically follow industry-standard commission structures, while advisory plans are available as outlined on our pricing page. All fees are discussed transparently during your initial consultation.</p></div>
+
+          <!-- 4 -->
+          <div class="faq-item" data-category="acquisitions">
+            <button class="faq-item__question">
+              What is the typical timeline for an ultra-luxury residential acquisition?
+              <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>A typical prime residential acquisition spans 30 to 90 days. We expedite this through preliminary structural surveys, pre-vetted legal documentation, and escrow coordination. Complex multi-jurisdictional holding structures or historic heritage titles may take 60 to 120 days.</p>
+            </div>
           </div>
-          <div class="faq-item">
-            <button class="faq-item__question">Can you help with property management after purchase?<span class="faq-item__icon"><i class="fas fa-plus"></i></span></button>
-            <div class="faq-item__answer"><p>Absolutely. Our property management division handles everything from tenant relations and maintenance to financial reporting and legal compliance — ensuring your investment is protected and optimized.</p></div>
+
+          <!-- 5 -->
+          <div class="faq-item" data-category="investment">
+            <button class="faq-item__question">
+              What advisory models and fee structures do you offer?
+              <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>We offer transparent tier-based advisory structures detailed on our <a href="pricing.html" style="color:var(--accent); text-decoration:underline;">Pricing page</a>, ranging from single-asset Essential Advisory consultations ($2,500) to quarterly Premium Portfolio retainers ($8,500/quarter) and bespoke Private Client mandates.</p>
+            </div>
           </div>
-          <div class="faq-item">
-            <button class="faq-item__question">How long does a typical property transaction take?<span class="faq-item__icon"><i class="fas fa-plus"></i></span></button>
-            <div class="faq-item__answer"><p>Timelines vary by market and property type. Residential transactions typically complete in 30–90 days, while commercial deals may take 60–180 days. We provide detailed timeline estimates during the advisory phase.</p></div>
+
+          <!-- 6 -->
+          <div class="faq-item" data-category="investment">
+            <button class="faq-item__question">
+              How do you conduct ROI forecasting and property valuation?
+              <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>We combine macro-economic indicators, localized transaction comparables (hedonic regression models), planning permission registries, and yield elasticity data. Our analytical dossiers provide base-case, optimistic, and downside stress-tested cash-flow models.</p>
+            </div>
           </div>
-          <div class="faq-item">
-            <button class="faq-item__question">Do you offer investment portfolio analysis?<span class="faq-item__icon"><i class="fas fa-plus"></i></span></button>
-            <div class="faq-item__answer"><p>Yes, our Premium Portfolio and Private Client plans include comprehensive portfolio analysis, ROI forecasting, and quarterly market intelligence reports tailored to your investment objectives.</p></div>
+
+          <!-- 7 -->
+          <div class="faq-item" data-category="management">
+            <button class="faq-item__question">
+              Do you offer turnkey property and asset management post-acquisition?
+              <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Yes. Our integrated asset management arm oversees high-end residential leasing, preventative estate maintenance, security integration, municipal tax compliance, and transparent financial reporting for international absentee owners.</p>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="faq-item" data-category="management">
+            <button class="faq-item__question">
+              What is included in your 24/7 private client keyholding and concierge service?
+              <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Our private concierge manages pre-arrival estate preparation (climate control, provisioning, staffing), routine property wellness inspections, emergency response, vehicle maintenance, and private aviation ground transfers.</p>
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="faq-item" data-category="legal">
+            <button class="faq-item__question">
+              How do you protect client confidentiality and high-profile identities?
+              <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Privacy is our foundational principle. All team members sign legally binding Non-Disclosure Agreements (NDAs). We facilitate transactions through blind trusts, SPVs (Special Purpose Vehicles), and attorney escrow accounts, ensuring client names never appear on public registries without consent.</p>
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="faq-item" data-category="legal">
+            <button class="faq-item__question">
+              Do you handle cross-border legal, title, and tax compliance coordination?
+              <span class="faq-item__icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Yes. While we operate as licensed real estate advisors rather than direct tax counsel, we collaborate seamlessly with your family office attorneys, wealth accountants, and trusted international notary partners to ensure zero compliance frictions.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Still Have Questions Banner -->
+        <div class="cta-banner" style="margin-top:5rem; text-align:center; padding:3.5rem 2rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-lg);" data-aos="fade-up">
+          <span class="section-label">Direct Communication</span>
+          <h3 style="font-family:var(--font-serif); font-size:var(--text-3xl); margin-top:0.5rem; margin-bottom:1rem;">Still Have Questions?</h3>
+          <p style="color:var(--text-secondary); max-width:580px; margin-inline:auto; margin-bottom:2rem; font-size:var(--text-base);">
+            Our advisory desk is prepared to address your specific criteria or coordinate a private briefing with Mr. Afaq Ahmad.
+          </p>
+          <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn--gold"><i class="fas fa-paper-plane"></i> Contact Our Advisory Team</a>
+            <a href="https://wa.me/15551234567" target="_blank" rel="noopener" class="btn btn--ghost"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container"><div class="site-footer__bottom" style="border:none; padding-top:3rem;"><p class="site-footer__copyright">&copy; 2026 Afaq Ahmad Real Estate.</p></div></div></footer>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a href="index.html" class="site-logo"><span class="site-logo__name">Afaq Ahmad</span><span class="site-logo__tagline">Real Estate</span></a>
+          <p class="site-footer__brand-desc">Ultra-luxury international real estate advisory, bespoke acquisitions, and private wealth portfolio management since 2010.</p>
+          <div class="site-footer__social" style="margin-top:1.5rem;">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/15551234567" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="site-footer__heading">Explore Portfolio</h4>
+          <ul class="site-footer__links">
+            <li><a href="properties.html?category=villas">Luxury Villas & Estates</a></li>
+            <li><a href="properties.html?category=apartments">Penthouses & Residences</a></li>
+            <li><a href="properties.html?category=commercial">Commercial Prime Assets</a></li>
+            <li><a href="properties.html?category=plots">Private Islands & Land</a></li>
+            <li><a href="services.html">Advisory Services</a></li>
+            <li><a href="pricing.html">Investment Plans</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="site-footer__heading">Agency</h4>
+          <ul class="site-footer__links">
+            <li><a href="about.html">About Afaq Ahmad</a></li>
+            <li><a href="team.html">Our Leadership</a></li>
+            <li><a href="testimonials.html">Client Testimonials</a></li>
+            <li><a href="faq.html">Frequently Asked Questions</a></li>
+            <li><a href="contact.html">Private Office Locations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="site-footer__heading">Private Intelligence</h4>
+          <p style="color:var(--text-secondary); font-size:var(--text-sm); margin-bottom:1rem; line-height:1.6;">Receive exclusive off-market listings and confidential quarterly market intelligence reports.</p>
+          <form class="newsletter-form" aria-label="Newsletter subscription">
+            <div style="display:flex; gap:0.5rem;">
+              <input type="email" placeholder="Your corporate email..." required style="background:var(--bg-card); border:1px solid var(--border-color); color:var(--text-primary); padding:0.75rem 1rem; border-radius:var(--radius-sm); font-size:var(--text-sm); width:100%;">
+              <button type="submit" class="btn btn--gold" style="padding:0.75rem 1.25rem;"><i class="fas fa-arrow-right"></i></button>
+            </div>
+          </form>
+          <div style="margin-top:1.25rem; font-size:var(--text-xs); color:var(--text-muted); display:flex; flex-direction:column; gap:0.35rem;">
+            <div><i class="fas fa-phone" style="color:var(--accent); margin-right:0.5rem;"></i> +1 (555) 123-4567</div>
+            <div><i class="fas fa-envelope" style="color:var(--accent); margin-right:0.5rem;"></i> privateoffice@afaqahmad.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">&copy; 2026 Afaq Ahmad Real Estate. All rights reserved. | <span style="opacity:0.7;">Demo & Academic Showcase</span></p>
+        <div style="display:flex; gap:1.5rem; font-size:var(--text-xs); color:var(--text-muted);">
+          <a href="contact.html">Privacy Policy</a>
+          <a href="contact.html">Terms of Service</a>
+          <a href="contact.html">Disclaimers</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <a href="https://wa.me/15551234567" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

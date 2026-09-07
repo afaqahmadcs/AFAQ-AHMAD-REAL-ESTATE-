@@ -87,11 +87,24 @@
 
   .featured-strip__image-accent {
     bottom: -1rem;
-    right: 1rem;
+    right: 0;
     width: 45%;
   }
 
   .why-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .featured-strip__image-accent {
+    position: static;
+    width: 100%;
+    margin-top: 1rem;
+    border-width: 2px;
+  }
+
+  .why-item {
+    padding: 2rem 1.25rem;
   }
 }

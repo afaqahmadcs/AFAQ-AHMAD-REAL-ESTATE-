@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Testimonials | Afaq Ahmad Real Estate</title>
-  <meta name="description" content="Client testimonials and reviews — hear from satisfied luxury property clients of Afaq Ahmad Real Estate.">
-  <meta property="og:title" content="Testimonials | Afaq Ahmad Real Estate">
+  <title>Client Testimonials & Reviews | Afaq Ahmad Real Estate</title>
+  <meta name="description" content="Read authentic reviews and confidential testimonials from high-net-worth buyers, sellers, and family offices worldwide.">
+  <meta property="og:title" content="Client Testimonials & Reviews | Afaq Ahmad Real Estate">
+  <meta property="og:description" content="Discover how Afaq Ahmad Real Estate delivers exceptional acquisition and asset advisory results.">
+  <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <script>
+    (function(){
+      const t = localStorage.getItem('aa_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -22,102 +30,462 @@
   <link rel="stylesheet" href="assets/css/components/footer.css">
   <link rel="stylesheet" href="assets/css/components/hero.css">
   <link rel="stylesheet" href="assets/css/components/cards.css">
+  <link rel="stylesheet" href="assets/css/components/sections.css">
   <link rel="stylesheet" href="assets/css/animations.css">
+  <style>
+    .trust-stat-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding: 2.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      margin-top: -3rem;
+      position: relative;
+      z-index: 10;
+      box-shadow: var(--shadow-lg);
+    }
+    .trust-stat-item {
+      text-align: center;
+      border-right: 1px solid var(--border-color);
+    }
+    .trust-stat-item:last-child {
+      border-right: none;
+    }
+    .trust-stat-num {
+      font-family: var(--font-serif);
+      font-size: var(--text-3xl);
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .trust-stat-label {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    .review-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: var(--shadow-md);
+    }
+    .review-card__header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .review-card__avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+    }
+    .review-card__meta h4 {
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.15rem;
+    }
+    .review-card__meta span {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+    }
+    .review-card__stars {
+      color: var(--accent);
+      font-size: var(--text-xs);
+      display: flex;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+    }
+    .review-card__quote {
+      font-size: var(--text-sm);
+      line-height: 1.7;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .review-card__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.725rem;
+      color: var(--accent);
+      background: rgba(201, 169, 98, 0.1);
+      padding: 0.35rem 0.75rem;
+      border-radius: 100px;
+      align-self: flex-start;
+      border: 1px solid rgba(201, 169, 98, 0.2);
+    }
+    @media (max-width: 900px) {
+      .trust-stat-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+      .trust-stat-item:nth-child(2) {
+        border-right: none;
+      }
+    }
+    @media (max-width: 600px) {
+      .trust-stat-strip {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1.25rem;
+        margin-top: -1.5rem;
+      }
+      .trust-stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1.25rem;
+      }
+      .trust-stat-item:last-child {
+        border-bottom: none;
+      }
+      .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-top: 2rem;
+      }
+      .review-card {
+        padding: 1.5rem 1.25rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="page-loader" aria-hidden="true"><div class="page-loader__logo">Afaq Ahmad<span>Real Estate</span></div><div class="page-loader__bar"><div class="page-loader__bar-fill"></div></div></div>
   <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
+
   <header class="site-header scrolled" role="banner">
     <div class="site-header__inner">
       <a href="index.html" class="site-logo"><span class="site-logo__name">Afaq Ahmad</span><span class="site-logo__tagline">Real Estate</span></a>
-      <nav class="site-nav"><ul class="site-nav__list">
-        <li><a href="index.html" class="site-nav__link">Home</a></li>
-        <li><a href="about.html" class="site-nav__link">About</a></li>
-        <li><a href="properties.html" class="site-nav__link">Properties</a></li>
-        <li><a href="contact.html" class="site-nav__link">Contact</a></li>
-      </ul></nav>
+      <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <ul class="site-nav__list">
+          <li><a href="index.html" class="site-nav__link">Home</a></li>
+          <li><a href="about.html" class="site-nav__link">About</a></li>
+          <li><a href="services.html" class="site-nav__link">Services</a></li>
+          <li><a href="properties.html" class="site-nav__link">Properties</a></li>
+          <li><a href="team.html" class="site-nav__link">Team</a></li>
+          <li><a href="pricing.html" class="site-nav__link">Pricing</a></li>
+          <li><a href="testimonials.html" class="site-nav__link active">Testimonials</a></li>
+          <li><a href="faq.html" class="site-nav__link">FAQ</a></li>
+          <li><a href="contact.html" class="site-nav__link">Contact</a></li>
+        </ul>
+      </nav>
       <div class="header-actions">
+        <button class="header-actions__btn search-toggle" aria-label="Search"><i class="fas fa-search"></i></button>
         <button class="header-actions__btn theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
         <a href="contact.html" class="header-actions__cta">Book Consultation</a>
         <button class="hamburger" aria-label="Open menu"><span class="hamburger__line"></span><span class="hamburger__line"></span><span class="hamburger__line"></span></button>
       </div>
     </div>
   </header>
-  <nav class="mobile-nav"><a href="index.html" class="mobile-nav__link">Home</a><a href="contact.html" class="mobile-nav__link">Contact</a></nav>
+
+  <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html" class="mobile-nav__link">Home</a>
+    <a href="about.html" class="mobile-nav__link">About</a>
+    <a href="services.html" class="mobile-nav__link">Services</a>
+    <a href="properties.html" class="mobile-nav__link">Properties</a>
+    <a href="team.html" class="mobile-nav__link">Team</a>
+    <a href="pricing.html" class="mobile-nav__link">Pricing</a>
+    <a href="testimonials.html" class="mobile-nav__link active">Testimonials</a>
+    <a href="faq.html" class="mobile-nav__link">FAQ</a>
+    <a href="contact.html" class="mobile-nav__link">Contact</a>
+  </nav>
+
+  <!-- Live Search Overlay -->
+  <div class="search-overlay" role="dialog" aria-label="Search">
+    <button class="search-overlay__close" aria-label="Close search"><i class="fas fa-times"></i></button>
+    <div class="search-overlay__inner">
+      <input type="search" class="search-overlay__input" placeholder="Search properties by title, city, or type..." aria-label="Search">
+      <div class="search-results" style="display:none;"></div>
+    </div>
+  </div>
 
   <main>
     <section class="page-hero">
       <div class="container page-hero__content">
-        <nav class="page-hero__breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Testimonials</span></nav>
+        <nav class="page-hero__breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Testimonials</span></nav>
         <h1 class="page-hero__title" data-aos="fade-up">Client Testimonials</h1>
+        <p style="color:var(--text-secondary); max-width:620px; margin-top:1rem; font-size:var(--text-lg); line-height:1.6;" data-aos="fade-up" data-aos-delay="100">
+          The true measure of our advisory excellence lies in the enduring trust of the families, investors, and institutions we serve globally.
+        </p>
       </div>
     </section>
 
+    <!-- Trust Stats Strip -->
+    <div class="container" data-aos="fade-up">
+      <div class="trust-stat-strip">
+        <div class="trust-stat-item">
+          <div class="trust-stat-num">98.4%</div>
+          <div class="trust-stat-label">Client Retention</div>
+        </div>
+        <div class="trust-stat-item">
+          <div class="trust-stat-num">$2.4B+</div>
+          <div class="trust-stat-label">Transacted Value*</div>
+        </div>
+        <div class="trust-stat-item">
+          <div class="trust-stat-num">4.98 / 5</div>
+          <div class="trust-stat-label">Independent Rating</div>
+        </div>
+        <div class="trust-stat-item">
+          <div class="trust-stat-num">100%</div>
+          <div class="trust-stat-label">Discretion Record</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Reviews Grid -->
     <section class="section">
       <div class="container">
-        <div class="swiper testimonials-swiper" data-aos="fade-up">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <img class="testimonial-card__photo" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="James Richardson" loading="lazy">
-                <div>
-                  <div class="testimonial-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                  <blockquote class="testimonial-card__quote">"Afaq Ahmad's team found us the perfect villa in Marbella. Their attention to detail and market knowledge exceeded every expectation we had."</blockquote>
-                  <div class="testimonial-card__author">James Richardson</div>
-                  <div class="testimonial-card__role">Villa Owner, Marbella</div>
+        <div class="text-center" style="max-width:680px; margin-inline:auto; margin-bottom:2rem;" data-aos="fade-up">
+          <span class="section-label">Verified Experiences</span>
+          <h2 class="section-title">Enduring Partnerships Worldwide</h2>
+          <p class="section-subtitle">
+            From historic European châteaux to prime commercial flagships in New York and Dubai, hear how our bespoke approach delivers unmatched outcomes.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <article class="review-card" data-aos="fade-up">
+            <div>
+              <div class="review-card__header">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80" alt="James Richardson" class="review-card__avatar">
+                <div class="review-card__meta">
+                  <h4>James Richardson</h4>
+                  <span>Marbella Villa Acquisition</span>
                 </div>
               </div>
+              <div class="review-card__stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <blockquote class="review-card__quote">
+                "Afaq Ahmad’s team uncovered a villa in La Zagaleta that was never publicly listed. Their forensic due diligence and diplomatic negotiation saved our family over €1.4M on the initial asking terms. Unrivaled professionalism."
+              </blockquote>
             </div>
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <img class="testimonial-card__photo" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Sarah Al-Mansouri" loading="lazy">
-                <div>
-                  <div class="testimonial-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                  <blockquote class="testimonial-card__quote">"The investment advisory service transformed our portfolio. Professional, transparent, and genuinely committed to our financial goals."</blockquote>
-                  <div class="testimonial-card__author">Sarah Al-Mansouri</div>
-                  <div class="testimonial-card__role">Property Investor, Dubai</div>
-                </div>
-              </div>
+            <div class="review-card__badge">
+              <i class="fas fa-shield-alt"></i> Verified Acquisition (€14.2M)
             </div>
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <img class="testimonial-card__photo" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Thomas Becker" loading="lazy">
-                <div>
-                  <div class="testimonial-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                  <blockquote class="testimonial-card__quote">"Selling our Manhattan penthouse through Afaq Ahmad was effortless. They handled everything with complete discretion and achieved above asking price."</blockquote>
-                  <div class="testimonial-card__author">Thomas Becker</div>
-                  <div class="testimonial-card__role">Penthouse Seller, New York</div>
+          </article>
+
+          <!-- Review 2 -->
+          <article class="review-card" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="review-card__header">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80" alt="Sarah Al-Mansouri" class="review-card__avatar">
+                <div class="review-card__meta">
+                  <h4>Sarah Al-Mansouri</h4>
+                  <span>Dubai Portfolio Structuring</span>
                 </div>
               </div>
+              <div class="review-card__stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <blockquote class="review-card__quote">
+                "As an active investor managing regional allocations, finding an advisor who combines strict financial acumen with architectural discernment is rare. Afaq Ahmad's quarterly yield projections have been accurate to within 2% across 3 years."
+              </blockquote>
             </div>
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <img class="testimonial-card__photo" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Fatima Al-Rashid" loading="lazy">
-                <div>
-                  <div class="testimonial-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                  <blockquote class="testimonial-card__quote">"From consultation to keys in hand — the entire process was seamless. Their commercial property expertise is unmatched in the region."</blockquote>
-                  <div class="testimonial-card__author">Fatima Al-Rashid</div>
-                  <div class="testimonial-card__role">Commercial Investor, Riyadh</div>
+            <div class="review-card__badge">
+              <i class="fas fa-shield-alt"></i> Multi-Asset Portfolio Investor
+            </div>
+          </article>
+
+          <!-- Review 3 -->
+          <article class="review-card" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="review-card__header">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80" alt="Thomas Becker" class="review-card__avatar">
+                <div class="review-card__meta">
+                  <h4>Thomas Becker</h4>
+                  <span>Manhattan Penthouse Disposition</span>
                 </div>
               </div>
+              <div class="review-card__stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <blockquote class="review-card__quote">
+                "Selling our Tribeca triplex required complete privacy to prevent media intrusion. Afaq personally curated private viewings exclusively for vetted global buyers. The sale closed within 45 days at 98.5% of our confidential target price."
+              </blockquote>
+            </div>
+            <div class="review-card__badge">
+              <i class="fas fa-shield-alt"></i> Confidential Disposition ($22M)
+            </div>
+          </article>
+
+          <!-- Review 4 -->
+          <article class="review-card" data-aos="fade-up">
+            <div>
+              <div class="review-card__header">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80" alt="Fatima Al-Rashid" class="review-card__avatar">
+                <div class="review-card__meta">
+                  <h4>Fatima Al-Rashid</h4>
+                  <span>Riyadh Commercial Expansion</span>
+                </div>
+              </div>
+              <div class="review-card__stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <blockquote class="review-card__quote">
+                "From our first consultation to the final notary signing, every phase was executed flawlessly. Their deep grasp of commercial zoning laws and tenant covenants made our corporate headquarters acquisition smooth and predictable."
+              </blockquote>
+            </div>
+            <div class="review-card__badge">
+              <i class="fas fa-shield-alt"></i> Commercial Mandate ($34M)
+            </div>
+          </article>
+
+          <!-- Review 5 -->
+          <article class="review-card" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="review-card__header">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Sir David H. Sterling" class="review-card__avatar">
+                <div class="review-card__meta">
+                  <h4>Sir David H. Sterling</h4>
+                  <span>Mayfair Heritage Acquisition</span>
+                </div>
+              </div>
+              <div class="review-card__stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <blockquote class="review-card__quote">
+                "Afaq Ahmad provided exceptional stewardship during our Grade II listed acquisition in London. Their heritage restoration advisors and conveyancing partners handled complex leasehold negotiations with utter mastery."
+              </blockquote>
+            </div>
+            <div class="review-card__badge">
+              <i class="fas fa-shield-alt"></i> Heritage Mandate (£18.5M)
+            </div>
+          </article>
+
+          <!-- Review 6 -->
+          <article class="review-card" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="review-card__header">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80" alt="Laurent & Chantal Mercier" class="review-card__avatar">
+                <div class="review-card__meta">
+                  <h4>Laurent &amp; Chantal Mercier</h4>
+                  <span>Cap d'Antibes Coastal Villa</span>
+                </div>
+              </div>
+              <div class="review-card__stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <blockquote class="review-card__quote">
+                "The multilingual team guided us through French property wealth tax structures and maritime boundary surveys without friction. It felt like dealing with trusted lifelong counselors rather than an estate agency."
+              </blockquote>
+            </div>
+            <div class="review-card__badge">
+              <i class="fas fa-shield-alt"></i> Coastal Acquisition (€16M)
+            </div>
+          </article>
+        </div>
+
+        <!-- Privacy & Discretion Guarantee -->
+        <div style="margin-top:5rem; padding:3rem; background:var(--bg-card); border-radius:var(--radius-lg); border:1px solid var(--border-color);" data-aos="fade-up">
+          <div style="display:flex; gap:2rem; align-items:center; flex-wrap:wrap;">
+            <div style="font-size:3rem; color:var(--accent); flex-shrink:0;">
+              <i class="fas fa-user-secret"></i>
+            </div>
+            <div style="flex:1; min-width:280px;">
+              <h3 style="font-family:var(--font-serif); font-size:var(--text-2xl); margin-bottom:0.5rem;">Our Client Discretion Protocol</h3>
+              <p style="color:var(--text-secondary); font-size:var(--text-sm); line-height:1.7;">
+                All client relationships are governed by strict Non-Disclosure Agreements (NDAs). Case studies and testimonials displayed have been published with explicit written consent, with personal identifiers occasionally redacted upon request to safeguard family privacy.
+              </p>
+            </div>
+            <div>
+              <a href="contact.html" class="btn btn--gold">Book Private Advisory</a>
             </div>
           </div>
-          <div class="swiper-pagination"></div>
         </div>
+
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container"><div class="site-footer__bottom" style="border:none; padding-top:3rem;"><p class="site-footer__copyright">&copy; 2026 Afaq Ahmad Real Estate.</p></div></div></footer>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a href="index.html" class="site-logo"><span class="site-logo__name">Afaq Ahmad</span><span class="site-logo__tagline">Real Estate</span></a>
+          <p class="site-footer__brand-desc">Ultra-luxury international real estate advisory, bespoke acquisitions, and private wealth portfolio management since 2010.</p>
+          <div class="site-footer__social" style="margin-top:1.5rem;">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/15551234567" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="site-footer__heading">Explore Portfolio</h4>
+          <ul class="site-footer__links">
+            <li><a href="properties.html?category=villas">Luxury Villas & Estates</a></li>
+            <li><a href="properties.html?category=apartments">Penthouses & Residences</a></li>
+            <li><a href="properties.html?category=commercial">Commercial Prime Assets</a></li>
+            <li><a href="properties.html?category=plots">Private Islands & Land</a></li>
+            <li><a href="services.html">Advisory Services</a></li>
+            <li><a href="pricing.html">Investment Plans</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="site-footer__heading">Agency</h4>
+          <ul class="site-footer__links">
+            <li><a href="about.html">About Afaq Ahmad</a></li>
+            <li><a href="team.html">Our Leadership</a></li>
+            <li><a href="testimonials.html">Client Testimonials</a></li>
+            <li><a href="faq.html">Frequently Asked Questions</a></li>
+            <li><a href="contact.html">Private Office Locations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="site-footer__heading">Private Intelligence</h4>
+          <p style="color:var(--text-secondary); font-size:var(--text-sm); margin-bottom:1rem; line-height:1.6;">Receive exclusive off-market listings and confidential quarterly market intelligence reports.</p>
+          <form class="newsletter-form" aria-label="Newsletter subscription">
+            <div style="display:flex; gap:0.5rem;">
+              <input type="email" placeholder="Your corporate email..." required style="background:var(--bg-card); border:1px solid var(--border-color); color:var(--text-primary); padding:0.75rem 1rem; border-radius:var(--radius-sm); font-size:var(--text-sm); width:100%;">
+              <button type="submit" class="btn btn--gold" style="padding:0.75rem 1.25rem;"><i class="fas fa-arrow-right"></i></button>
+            </div>
+          </form>
+          <div style="margin-top:1.25rem; font-size:var(--text-xs); color:var(--text-muted); display:flex; flex-direction:column; gap:0.35rem;">
+            <div><i class="fas fa-phone" style="color:var(--accent); margin-right:0.5rem;"></i> +1 (555) 123-4567</div>
+            <div><i class="fas fa-envelope" style="color:var(--accent); margin-right:0.5rem;"></i> privateoffice@afaqahmad.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">&copy; 2026 Afaq Ahmad Real Estate. All rights reserved. | <span style="opacity:0.7;">Demo & Academic Showcase (*illustrative data)</span></p>
+        <div style="display:flex; gap:1.5rem; font-size:var(--text-xs); color:var(--text-muted);">
+          <a href="contact.html">Privacy Policy</a>
+          <a href="contact.html">Terms of Service</a>
+          <a href="contact.html">Disclaimers</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <a href="https://wa.me/15551234567" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
-  <script>
-    new Swiper('.testimonials-swiper', {
-      effect: 'fade', fadeEffect: { crossFade: true },
-      autoplay: { delay: 5000 }, pagination: { el: '.swiper-pagination', clickable: true }, loop: true
-    });
-  </script>
 </body>
 </html>

@@ -56,3 +56,370 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* =============================================
+   Luxury Toast Notifications
+   ============================================= */
+.aa-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%, 40px);
+  background: rgba(14, 14, 14, 0.92);
+  border: 1px solid var(--accent);
+  color: var(--color-white-warm);
+  padding: 0.75rem 1.75rem;
+  border-radius: 100px;
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-medium);
+  z-index: 11000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+  pointer-events: none;
+}
+
+[data-theme="light"] .aa-toast {
+  background: rgba(250, 248, 245, 0.95);
+  border-color: var(--accent);
+  color: #111A29;
+}
+
+.aa-toast.show {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =============================================
+   Fullscreen Image Lightbox
+   ============================================= */
+.aa-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+}
+
+.aa-lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.aa-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 14, 26, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.aa-lightbox__close,
+.aa-lightbox__prev,
+.aa-lightbox__next {
+  position: absolute;
+  z-index: 10002;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.aa-lightbox__close:hover,
+.aa-lightbox__prev:hover,
+.aa-lightbox__next:hover {
+  background: var(--accent);
+  color: var(--bg-dark);
+  border-color: var(--accent);
+}
+
+.aa-lightbox__close {
+  top: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  font-size: 1.25rem;
+}
+
+.aa-lightbox__prev {
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  font-size: 1.25rem;
+}
+
+.aa-lightbox__next {
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  font-size: 1.25rem;
+}
+
+.aa-lightbox__content {
+  position: relative;
+  z-index: 10001;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aa-lightbox__img {
+  max-width: 88vw;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+  animation: zoomFade 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes zoomFade {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.aa-lightbox__caption {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--text-sm);
+  font-family: var(--font-label);
+}
+
+.aa-lightbox__counter {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Gallery Expand Button */
+.gallery-expand-btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10;
+  background: rgba(14, 14, 14, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--accent);
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gallery-expand-btn:hover {
+  background: var(--accent);
+  color: var(--bg-dark);
+}
+
+/* =============================================
+   Luxury Consultation & Schedule Modals
+   ============================================= */
+.schedule-modal,
+.confirmation-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+}
+
+.schedule-modal.active,
+.confirmation-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.schedule-modal__backdrop,
+.confirmation-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 14, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.schedule-modal__box,
+.confirmation-modal__box {
+  position: relative;
+  z-index: 10000;
+  width: 100%;
+  max-width: 520px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-medium);
+  transform: translateY(20px);
+  transition: transform var(--transition-base);
+}
+
+.schedule-modal.active .schedule-modal__box,
+.confirmation-modal.active .confirmation-modal__box {
+  transform: translateY(0);
+}
+
+.schedule-modal__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.schedule-modal__close:hover {
+  color: var(--accent);
+}
+
+.schedule-modal__title,
+.confirmation-modal__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.schedule-modal__desc,
+.confirmation-modal__desc {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  line-height: 1.6;
+}
+
+.schedule-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.confirmation-modal__box {
+  text-align: center;
+}
+
+.confirmation-modal__icon {
+  width: 64px;
+  height: 64px;
+  margin-inline: auto;
+  margin-bottom: 1.25rem;
+  border-radius: 50%;
+  background: rgba(201, 169, 98, 0.15);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+
+@media (max-width: 640px) {
+  .aa-lightbox__close {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .aa-lightbox__prev {
+    left: 0.5rem;
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+
+  .aa-lightbox__next {
+    right: 0.5rem;
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+
+  .aa-lightbox__content {
+    max-width: 96vw;
+  }
+
+  .aa-lightbox__img {
+    max-width: 94vw;
+    max-height: 70vh;
+  }
+
+  .schedule-modal,
+  .confirmation-modal {
+    padding: 1rem;
+  }
+
+  .schedule-modal__box,
+  .confirmation-modal__box {
+    padding: 1.75rem 1.25rem;
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+
+  .schedule-modal__close {
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+  }
+
+  .schedule-modal__title,
+  .confirmation-modal__title {
+    font-size: 1.35rem;
+  }
+
+  .schedule-modal__desc,
+  .confirmation-modal__desc {
+    margin-bottom: 1.25rem;
+  }
+
+  .schedule-modal__form {
+    gap: 1rem;
+  }
+}
+

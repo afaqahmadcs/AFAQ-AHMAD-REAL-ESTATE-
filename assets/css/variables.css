@@ -1,5 +1,7 @@
 /* =============================================
    Afaq Ahmad Real Estate — Design Tokens
+   Primary Identity: Luxury Dark Aesthetic (Default)
+   Secondary Identity: Curated Editorial Light Mode
    ============================================= */
 
 :root {
@@ -12,6 +14,7 @@
   --color-gold: #C9A962;
   --color-gold-muted: #B8954F;
   --color-gold-light: rgba(201, 169, 98, 0.15);
+  --color-gold-glow: rgba(201, 169, 98, 0.25);
   --color-gray-soft: #E8E6E2;
   --color-gray-mid: #9A9590;
   --color-charcoal: #2A2A2A;
@@ -19,20 +22,32 @@
   --color-surface-dark: #161616;
   --color-surface-dark-2: #1E1E1E;
 
-  /* Semantic */
-  --bg-primary: var(--color-white-pure);
-  --bg-secondary: var(--color-white-warm);
-  --bg-dark: var(--color-matte-black);
-  --text-primary: var(--color-charcoal);
-  --text-muted: var(--color-gray-mid);
-  --text-inverse: var(--color-white-warm);
-  --accent: var(--color-gold);
-  --border-color: var(--color-gray-soft);
+  /* Semantic Variables — Default: Dark Luxury */
+  --bg-primary: #0E0E0E;
+  --bg-secondary: #161616;
+  --bg-tertiary: #1E1E1E;
+  --bg-card: #161616;
+  --bg-card-hover: #1F1F1F;
+  --bg-warm: #141414;
+  --bg-dark: #061428;
+  --bg-overlay: rgba(6, 20, 40, 0.95);
 
-  /* Header */
+  --text-primary: #F8F6F2;
+  --text-muted: #9A9590;
+  --text-dim: #6E6963;
+  --text-inverse: #0B1F3A;
+  --accent: #C9A962;
+  --accent-hover: #DFC27E;
+
+  --border-color: rgba(255, 255, 255, 0.09);
+  --border-hover: rgba(201, 169, 98, 0.4);
+
+  /* Header Semantic */
   --header-height: 80px;
-  --header-bg: rgba(11, 31, 58, 0.65);
-  --header-bg-scrolled: rgba(11, 31, 58, 0.92);
+  --header-bg: rgba(14, 14, 14, 0.75);
+  --header-bg-scrolled: rgba(14, 14, 14, 0.95);
+  --header-text: #F8F6F2;
+  --header-border: rgba(255, 255, 255, 0.08);
 
   /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
@@ -66,24 +81,42 @@
   --radius-md: 8px;
   --radius-lg: 16px;
   --radius-xl: 24px;
-  --shadow-soft: 0 4px 24px rgba(11, 31, 58, 0.08);
-  --shadow-medium: 0 8px 40px rgba(11, 31, 58, 0.12);
-  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.15);
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.45);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.4);
   --blur-glass: blur(16px);
   --transition-fast: 0.2s cubic-bezier(0.22, 1, 0.36, 1);
   --transition-base: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   --transition-slow: 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Dark Mode */
-[data-theme="dark"] {
-  --bg-primary: var(--color-matte-black);
-  --bg-secondary: var(--color-surface-dark);
-  --text-primary: var(--color-white-warm);
-  --text-muted: #8A8580;
-  --border-color: rgba(255, 255, 255, 0.08);
-  --header-bg: rgba(14, 14, 14, 0.75);
-  --header-bg-scrolled: rgba(14, 14, 14, 0.95);
-  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.3);
-  --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.4);
+/* Light Mode — Curated Luxury Editorial */
+[data-theme="light"] {
+  --bg-primary: #FAF8F5;
+  --bg-secondary: #F2EFE9;
+  --bg-tertiary: #E8E4DC;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FBF9F6;
+  --bg-warm: #F4F1EA;
+  --bg-dark: #0B1F3A;
+  --bg-overlay: rgba(250, 248, 245, 0.98);
+
+  --text-primary: #111A29;
+  --text-muted: #5B6577;
+  --text-dim: #8E98A8;
+  --text-inverse: #F8F6F2;
+  --accent: #B8954F;
+  --accent-hover: #9E7B35;
+
+  --border-color: rgba(17, 26, 41, 0.1);
+  --border-hover: rgba(184, 149, 79, 0.5);
+
+  --header-bg: rgba(250, 248, 245, 0.88);
+  --header-bg-scrolled: rgba(250, 248, 245, 0.98);
+  --header-text: #111A29;
+  --header-border: rgba(17, 26, 41, 0.08);
+
+  --shadow-soft: 0 4px 24px rgba(11, 31, 58, 0.06);
+  --shadow-medium: 0 8px 40px rgba(11, 31, 58, 0.1);
+  --shadow-glass: 0 8px 32px rgba(11, 31, 58, 0.08);
 }

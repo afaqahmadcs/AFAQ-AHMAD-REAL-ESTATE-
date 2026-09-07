@@ -203,6 +203,7 @@
 /* Comparison Table */
 .comparison-table {
   width: 100%;
+  min-width: 580px;
   border-collapse: collapse;
   margin-top: var(--space-xl);
 }

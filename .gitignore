@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Local duplicates & temporary test files
+AFAQ-AHMAD-REAL-ESTATE--main/
+scratch/
+*.log
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
