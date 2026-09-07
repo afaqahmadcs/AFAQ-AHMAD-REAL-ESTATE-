@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initNewsletterForms();
   initAOS();
+  initImageFallback();
 
   // Page-specific modules
   initPropertiesModule();
@@ -719,7 +720,7 @@ async function initPropertiesModule() {
     container.innerHTML = filtered.map(p => `
       <article class="property-card" data-slug="${p.slug}" data-category="${p.category}" data-aos="fade-up">
         <div class="property-card__image-wrap">
-          <img class="property-card__image" src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy">
+          <img class="property-card__image" src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80';">
           <span class="property-card__tag">${escapeHtml(p.category)}</span>
           <button class="property-card__favorite" aria-label="Save ${escapeHtml(p.title)} to favorites">
             <i class="far fa-heart"></i>
@@ -799,7 +800,7 @@ async function initPropertyDetailModule() {
   if (swiperWrapper) {
     swiperWrapper.innerHTML = images.map((img, idx) => `
       <div class="swiper-slide" data-index="${idx}">
-        <img src="${img}" alt="${escapeHtml(property.title)} view ${idx + 1}" loading="${idx === 0 ? 'eager' : 'lazy'}">
+        <img src="${img}" alt="${escapeHtml(property.title)} view ${idx + 1}" loading="${idx === 0 ? 'eager' : 'lazy'}" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80';">
         <button class="gallery-expand-btn" aria-label="Open Fullscreen Lightbox" data-index="${idx}">
           <i class="fas fa-expand"></i> View Lightbox
         </button>
@@ -985,7 +986,7 @@ function renderSimilarProperties(allProps, currentProp) {
   container.innerHTML = similar.map(p => `
     <article class="property-card" data-slug="${p.slug}" data-category="${p.category}">
       <div class="property-card__image-wrap">
-        <img class="property-card__image" src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy">
+        <img class="property-card__image" src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80';">
         <span class="property-card__tag">${escapeHtml(p.category)}</span>
         <button class="property-card__favorite" aria-label="Save ${escapeHtml(p.title)} to favorites">
           <i class="far fa-heart"></i>
@@ -1023,6 +1024,19 @@ function initAOS() {
   }
 }
 
+/* ==========================================================================
+   18. Global Image Error Fallback Handler
+   ========================================================================== */
+function initImageFallback() {
+  const fallbackUrl = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80';
+  window.addEventListener('error', function(e) {
+    if (e.target && e.target.tagName === 'IMG' && !e.target.dataset.fallbackApplied) {
+      e.target.dataset.fallbackApplied = 'true';
+      e.target.src = fallbackUrl;
+    }
+  }, true);
+}
+
 /* Helper: Escape HTML to avoid injection */
 function escapeHtml(str) {
   if (!str) return '';
@@ -1034,3 +1048,4 @@ function escapeHtml(str) {
     '"': '&quot;'
   }[tag] || tag));
 }
+

@@ -85,7 +85,7 @@
     "images": [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
       "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600573472591-ee6981f50809?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1200&q=80",
       "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80"
     ],
     "description": "A tranquil tropical sanctuary nestled in the lush hills of Ubud. Traditional Balinese craftsmanship harmonizes with modern luxury, featuring open-air pavilion living and a private wellness spa.",
@@ -108,7 +108,7 @@
     "images": [
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
       "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566752355-35792bedfcd2?w=1200&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80",
       "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80"
     ],
     "description": "A bespoke converted warehouse loft in central London. Exposed heritage brickwork, blackened steel beams, and double-height ceilings create an exquisite gallery atmosphere.",
@@ -149,12 +149,12 @@
     "garage": 4,
     "area": "7,500 sq ft",
     "areaNumeric": 7500,
-    "image": "https://images.unsplash.com/photo-1605276374101-debd2e774958?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?w=800&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1605276374101-debd2e774958?w=1200&q=80",
+      "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?w=1200&q=80",
       "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=80",
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=80"
     ],
     "description": "Direct oceanfront living on the prestigious Malibu coastline. This modern residence features retractable glass walls, a private beach deck, and unobstructed Pacific sunset vistas.",
     "features": ["Direct Beach Access", "Retractable Glass Walls", "Sunset Views", "Outdoor Kitchen", "Fire Pit Lounge", "Guest House"]
