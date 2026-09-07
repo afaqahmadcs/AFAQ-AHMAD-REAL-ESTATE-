@@ -57,6 +57,15 @@
   color: rgba(248, 246, 242, 0.7);
 }
 
+.site-footer__contact-item a {
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+.site-footer__contact-item a:hover {
+  color: var(--color-gold);
+}
+
 .site-footer__contact-item i {
   color: var(--color-gold);
   margin-top: 4px;

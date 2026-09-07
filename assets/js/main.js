@@ -822,12 +822,14 @@ async function initPropertyDetailModule() {
   // Fullscreen Lightbox Setup
   initLightbox(images, property.title);
 
-  // WhatsApp Button Link with dynamic prefilled message
-  const waBtn = document.querySelector('a[href*="wa.me"]');
-  if (waBtn) {
-    const text = encodeURIComponent(`Hello Afaq Ahmad Real Estate, I am interested in scheduling a viewing for: ${property.title} (${property.price}).`);
-    waBtn.href = `https://wa.me/15551234567?text=${text}`;
-  }
+  // WhatsApp Button Links with dynamic prefilled message
+  const waBtns = document.querySelectorAll('a[href*="wa.me"]');
+  waBtns.forEach(btn => {
+    if (!btn.classList.contains('whatsapp-float') && !btn.closest('.site-footer')) {
+      const text = encodeURIComponent(`Hello Afaq Ahmad, I am interested in scheduling a viewing or inquiring about: ${property.title} (${property.price}).`);
+      btn.href = `https://wa.me/923189798577?text=${text}`;
+    }
+  });
 
   // Share button
   const shareBtn = document.querySelector('[data-share-property]');
@@ -947,8 +949,8 @@ function openScheduleModal(propTitle) {
             <input type="email" name="email" required placeholder="alexander@vance.com">
           </div>
           <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" name="phone" required placeholder="+1 (555) 000-0000">
+            <label>Phone / WhatsApp Number</label>
+            <input type="tel" name="phone" required placeholder="+92 318 9798577">
           </div>
           <div class="form-group">
             <label>Preferred Viewing Date</label>
