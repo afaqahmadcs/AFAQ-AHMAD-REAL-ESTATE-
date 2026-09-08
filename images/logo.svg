@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 68" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 60" fill="none">
   <defs>
     <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#E8C97A;stop-opacity:1" />
@@ -11,25 +11,24 @@
     </linearGradient>
   </defs>
 
-  <!-- Icon Group -->
   <!-- Left side of A -->
-  <path d="M10 58 L28 12 L38 12 L22 58 Z" fill="url(#goldGrad)" />
+  <path d="M4 52 L18 8 L25 8 L13 52 Z" fill="url(#goldGrad)" />
   <!-- Right side of A -->
-  <path d="M46 58 L28 12 L38 12 L54 58 Z" fill="url(#goldGrad)" />
-  <!-- Roof arch curve over A -->
-  <path d="M6 46 Q32 4 58 46" stroke="url(#goldGrad2)" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <!-- Window/door at base center -->
-  <rect x="28" y="44" width="8" height="10" rx="1" fill="url(#goldGrad)" opacity="0.9"/>
-  <!-- Buildings / bar chart on right -->
-  <rect x="56" y="30" width="5" height="28" rx="1" fill="url(#goldGrad)"/>
-  <rect x="63" y="22" width="5" height="36" rx="1" fill="url(#goldGrad)"/>
-  <rect x="70" y="36" width="5" height="22" rx="1" fill="url(#goldGrad)" opacity="0.7"/>
+  <path d="M36 52 L18 8 L25 8 L43 52 Z" fill="url(#goldGrad)" />
+  <!-- Roof arch -->
+  <path d="M2 38 Q24 2 48 38" stroke="url(#goldGrad2)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Window -->
+  <rect x="20" y="38" width="7" height="9" rx="1" fill="url(#goldGrad)" opacity="0.9"/>
+  <!-- Bar chart buildings -->
+  <rect x="50" y="26" width="4" height="26" rx="1" fill="url(#goldGrad)"/>
+  <rect x="56" y="18" width="4" height="34" rx="1" fill="url(#goldGrad)"/>
+  <rect x="62" y="32" width="4" height="20" rx="1" fill="url(#goldGrad)" opacity="0.7"/>
 
   <!-- AFAQ AHMAD -->
-  <text x="85" y="34" font-family="'Playfair Display', 'Georgia', serif" font-size="22" font-weight="600" letter-spacing="2" fill="url(#goldGrad)">AFAQ AHMAD</text>
+  <text x="76" y="28" font-family="'Playfair Display', 'Georgia', serif" font-size="20" font-weight="600" letter-spacing="2.5" fill="url(#goldGrad)">AFAQ AHMAD</text>
 
-  <!-- Divider lines + REAL ESTATE -->
-  <line x1="85" y1="42" x2="118" y2="42" stroke="url(#goldGrad2)" stroke-width="0.8"/>
-  <text x="124" y="47" font-family="'Manrope', 'Arial', sans-serif" font-size="9" font-weight="500" letter-spacing="4" fill="url(#goldGrad)">REAL ESTATE</text>
-  <line x1="196" y1="42" x2="230" y2="42" stroke="url(#goldGrad2)" stroke-width="0.8"/>
+  <!-- Divider + REAL ESTATE -->
+  <line x1="76" y1="35" x2="106" y2="35" stroke="url(#goldGrad2)" stroke-width="0.8"/>
+  <text x="111" y="40" font-family="'Manrope', 'Arial', sans-serif" font-size="8.5" font-weight="500" letter-spacing="4.5" fill="url(#goldGrad)">REAL ESTATE</text>
+  <line x1="183" y1="35" x2="215" y2="35" stroke="url(#goldGrad2)" stroke-width="0.8"/>
 </svg>
