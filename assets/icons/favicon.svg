@@ -1,5 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="6" fill="#0B1F3A"/>
-  <path d="M8 22V14L16 8L24 14V22H19V17H13V22H8Z" stroke="#C9A962" stroke-width="1.5" fill="none"/>
-  <line x1="16" y1="8" x2="16" y2="12" stroke="#C9A962" stroke-width="1.5"/>
+  <defs>
+    <linearGradient id="goldFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8C97A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C9A962;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A07830;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Dark rounded background -->
+  <rect width="32" height="32" rx="7" fill="#0B1F3A"/>
+  <!-- Left side of A -->
+  <path d="M5 26 L13 6 L16 6 L10 26 Z" fill="url(#goldFav)"/>
+  <!-- Right side of A -->
+  <path d="M27 26 L19 6 L16 6 L22 26 Z" fill="url(#goldFav)"/>
+  <!-- Roof arch -->
+  <path d="M3 20 Q16 2 29 20" stroke="url(#goldFav)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- Window at base -->
+  <rect x="13.5" y="19" width="5" height="6" rx="0.8" fill="url(#goldFav)" opacity="0.9"/>
+  <!-- Bar chart buildings on right (small) -->
+  <rect x="23" y="15" width="2.5" height="11" rx="0.5" fill="url(#goldFav)"/>
+  <rect x="26.5" y="11" width="2.5" height="15" rx="0.5" fill="url(#goldFav)"/>
 </svg>

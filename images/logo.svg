@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8C97A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C9A962;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A07830;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8C97A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C9A962;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Icon Group -->
+  <!-- Left arc of A -->
+  <path d="M10 58 L28 12 L38 12 L22 58 Z" fill="url(#goldGrad)" />
+  <!-- Right arc of A -->
+  <path d="M46 58 L28 12 L38 12 L54 58 Z" fill="url(#goldGrad)" />
+  <!-- Roof arch curve over A -->
+  <path d="M6 46 Q32 4 58 46" stroke="url(#goldGrad2)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Window/door at base center -->
+  <rect x="28" y="44" width="8" height="10" rx="1" fill="url(#goldGrad)" opacity="0.9"/>
+  <!-- Buildings / bar chart on right -->
+  <rect x="56" y="30" width="5" height="28" rx="1" fill="url(#goldGrad)"/>
+  <rect x="63" y="22" width="5" height="36" rx="1" fill="url(#goldGrad)"/>
+  <rect x="70" y="36" width="5" height="22" rx="1" fill="url(#goldGrad)" opacity="0.7"/>
+
+  <!-- Text -->
+  <text x="85" y="34" font-family="'Playfair Display', 'Georgia', serif" font-size="22" font-weight="600" letter-spacing="2" fill="url(#goldGrad)">AFAQ AHMAD</text>
+
+  <!-- Divider lines around REAL ESTATE -->
+  <line x1="85" y1="42" x2="118" y2="42" stroke="url(#goldGrad2)" stroke-width="0.8"/>
+  <text x="124" y="47" font-family="'Manrope', 'Arial', sans-serif" font-size="9" font-weight="500" letter-spacing="4" fill="url(#goldGrad)">REAL ESTATE</text>
+  <line x1="196" y1="42" x2="230" y2="42" stroke="url(#goldGrad2)" stroke-width="0.8"/>
+
+  <!-- Tagline -->
+  <text x="85" y="62" font-family="'Manrope', 'Arial', sans-serif" font-size="6.5" font-weight="400" letter-spacing="2.5" fill="#C9A962" opacity="0.75">PREMIUM PROPERTIES  •  TRUSTED ADVISORY</text>
+</svg>
